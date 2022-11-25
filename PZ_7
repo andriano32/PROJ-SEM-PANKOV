@@ -1,0 +1,5 @@
+word = (input("Введите строку: ")) # ввод строки
+if word == str:
+ print(word.upper()) # преобразует все прописные буквы в заглавные
+else:
+  print("error")
