@@ -5,7 +5,7 @@
 
 word = str(input("Введите строку: ")) # ввод строки
 try:
-    if int(word):
+    if int(word): # если введено неверное значение, то выдаст ошибку
         print("error")
 except:
     print(word.upper())
