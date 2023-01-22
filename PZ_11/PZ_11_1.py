@@ -12,30 +12,27 @@
 
 import random
 
-my_file = open('pankovFile.txt', 'w', encoding="UTF-8")
+my_file = open('pankovFile_1.txt', 'w', encoding="UTF-8")
 lst = [random.randint(-10,20) for i in range(10)]
-my_file.write(f"Содержимое>> {lst}")
+my_file.write(f"Последовательность из отрицательных чисел>> {[i for i in lst if i < 0]}\n")
+my_file.write(f"Последовательность из положительных чисел>> {[i for i in lst if i >= 0]}")
 my_file.close()
 
-wester_f = open('pankovFile.txt' , 'w' , encoding="UTF=8")
-lst = [random.randint(-10,20) for i in range(10)]
+wester_f = open('pankovFile_2.txt' , 'w' , encoding="UTF=8")
 lst_2 = 1
 for i in lst:
     lst_2 *= i
 a = 1
 b = 0
 c = 0
-for d in range(0, len(lst)):
-    number = lst[d]*lst[d+1]
-    if number % 3 == 0:
-        print(lst[d])
-        print(c)
+for d in range(len(lst)-1):
+    if (lst[d] * lst[d+1]) % 3 == 0:
         c += 1
+
 
 
 
 wester_f.write(f"Исходные данные>> {lst}\n")
 wester_f.write(f"Количество элементов>> {len(lst)}\n")
 wester_f.write(f"Произведение элементов>> {lst_2}\n")
-wester_f.write(f"Количество пар, для которых произведение элементов делится на 3>> {c-1}\n")
-
+wester_f.write(f"Количество пар, для которых произведение элементов делится на 3>> {c}\n")
