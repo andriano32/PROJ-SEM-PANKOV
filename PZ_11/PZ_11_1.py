@@ -12,11 +12,7 @@
 
 import random
 
-my_file = open('pankovFile_1.txt', 'w', encoding="UTF-8")
 lst = [random.randint(-10,20) for i in range(10)]
-my_file.write(f"Последовательность из отрицательных чисел>> {[i for i in lst if i < 0]}\n")
-my_file.write(f"Последовательность из положительных чисел>> {[i for i in lst if i >= 0]}")
-my_file.close()
 
 wester_f = open('pankovFile_2.txt' , 'w' , encoding="UTF=8")
 lst_2 = 1
