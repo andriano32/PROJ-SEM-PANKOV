@@ -1,7 +1,21 @@
-# Вариант 17
-#Дан словарь на 6 персон, найти и вывести их средний возраст. (Пример,
-#{"Андрей": 32, "Виктор": 29, "Максим": 18, …}, среднее 26,33).
-
-per = {"Роман": 23, "Виктор": 50, "Виталик": 34, "Константин": 39, "Валерий" : 45, "Владимир": 55} # словарь с персонами и их возрастами
-srednee = int(sum(per.values())) / len(per) # программа складывает значения ключей и делит их и их количество
-print("Среднее значение:" , srednee) # вывод среднего значения
+import tkinter
+# Вызывается в момент нажатия на кнопку:
+def click():
+  # Получаем строковое содержимое поля ввода с помощью метода get()
+  # C помощью config() можем изменить отображаемый текст
+  converter.set('{:.2f}'.format((5/9*(float(entry.get())-32))))
+  window = tkinter.Tk()
+  frame = tkinter.Frame(window)
+  frame.pack()
+  # Модель: создаем объект класса IntVar
+  converter = tkinter.IntVar()
+  # Обнуляем созданный объект с помощью метода set()
+  #converter.set(0)
+  entry = tkinter.Entry(frame)
+  entry.pack()
+  label = tkinter.Label(frame, textvariable=converter)
+  label.pack()
+  # Привязываем обработчик нажатия на кнопку к функции click()а
+  button = tkinter.Button(frame, text='CONVERT', command=click)
+  button.pack()
+  window.mainloop()
