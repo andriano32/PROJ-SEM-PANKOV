@@ -13,6 +13,8 @@ BOARDHEIGHT = 7 # количество рядов значков
 assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
+# Для того, чтобы игровая программа могла создавать иконки всех возможных комбинаций цветов и форм, нам нужен кортеж для хранения всех этих значений.
+# У нас должно быть игровое поле общей площадью 70 квадратов (35 × 2 или 7 × 5 × 2).
 
 #            R    G    B
 GRAY     = (100, 100, 100)
